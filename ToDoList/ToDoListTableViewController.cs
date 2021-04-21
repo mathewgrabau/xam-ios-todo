@@ -12,5 +12,17 @@ namespace ToDoList
 		public ToDoListTableViewController (IntPtr handle) : base (handle)
 		{
 		}
-	}
+
+        public override nint RowsInSection(UITableView tableView, nint section)
+        {
+            return 5;
+        }
+
+        public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
+        {
+			var cell = new UITableViewCell();
+			cell.TextLabel.Text = "New cell!";
+			return cell;
+        }
+    }
 }
