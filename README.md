@@ -16,7 +16,5 @@ class Todo
 
 Here is what the application looks like running in the simulator (first checkpoint - just rendering the list):
 
-![Screenshot 1](./Screenshots/01-initial-list.png)
-
-
+![Screenshot 1](./Screenshots/01-initial-list.png )
 
