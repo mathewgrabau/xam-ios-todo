@@ -1,6 +1,9 @@
 ﻿using System;
 namespace ToDoList
 {
+    /// <summary>
+    /// Basic object/item to create t
+    /// </summary>
     public class ToDoItem
     {
         /// <summary>
@@ -12,9 +15,5 @@ namespace ToDoList
         /// Whether the item is flagged as important.
         /// </summary>
         public bool Important { get; set; }
-
-        public ToDoItem()
-        {
-        }
     }
 }

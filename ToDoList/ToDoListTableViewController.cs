@@ -23,7 +23,7 @@ namespace ToDoList
             _listItems.Add(new ToDoItem { Important = true, Name = "Buy Milk" });
             _listItems.Add(new ToDoItem { Important = false, Name = "Walk the dog" });
         }
-
+            
         public override nint RowsInSection(UITableView tableView, nint section)
         {
             return _listItems.Count;
@@ -32,7 +32,19 @@ namespace ToDoList
         public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
         {
 			var cell = new UITableViewCell();
-            cell.TextLabel.Text = _listItems[indexPath.Row].Name;
+            ToDoItem item = _listItems[indexPath.Row];
+            if (item != null)
+            {
+                if (item.Important)
+                {
+                    cell.TextLabel.Text = $"{item.Name} (!)";
+                }
+                else
+                {
+                    cell.TextLabel.Text = item.Name;
+                }
+            }
+
 			return cell;
         }
     }
