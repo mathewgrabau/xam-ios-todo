@@ -2,7 +2,7 @@
 namespace ToDoList
 {
     /// <summary>
-    /// Basic object/item to create t
+    /// Basic object/item model for the items shown in the application.
     /// </summary>
     public class ToDoItem
     {
