@@ -31,11 +31,37 @@
                             <outlet property="delegate" destination="5OM-VZ-pyE" id="Mra-Ug-yZF"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="To Do List" id="aNd-6Z-Kbe"/>
+                    <navigationItem key="navigationItem" title="To Do List" id="aNd-6Z-Kbe">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="gIh-CN-NL2"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="U6G-I1-ycm">
+                            <connections>
+                                <segue destination="waV-U0-aIW" kind="show" id="MGk-CP-t6d"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qq9-d4-8Kw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1639.1304347826087" y="0.0"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="phg-nP-syg">
+            <objects>
+                <viewController id="waV-U0-aIW" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EhV-s0-ig7"/>
+                        <viewControllerLayoutGuide type="bottom" id="pPZ-We-3XW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="osv-QQ-Rer">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="RvL-r3-cB3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H2x-16-Ucv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2536" y="0.0"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aYt-UF-dmq">
