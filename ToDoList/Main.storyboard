@@ -56,9 +56,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xwk-8h-QHH">
-                                <rect key="frame" x="192" y="264" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xwk-8h-QHH">
+                                <rect key="frame" x="192" y="264" width="30" height="93"/>
                                 <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addButtonClicked:" destination="waV-U0-aIW" eventType="touchUpInside" id="U6z-cA-2tW"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BNj-Rf-xrI">
                                 <rect key="frame" x="40" y="108" width="334" height="34"/>
@@ -90,13 +93,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="RvL-r3-cB3"/>
                     <connections>
+                        <outlet property="addButton" destination="xwk-8h-QHH" id="6uP-f7-Hhp"/>
                         <outlet property="importantSwitch" destination="qJP-c8-Ovq" id="bpz-JG-dG8"/>
                         <outlet property="nameTextField" destination="BNj-Rf-xrI" id="tLb-KF-fk9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H2x-16-Ucv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2536" y="0.0"/>
+            <point key="canvasLocation" x="2534.7826086956525" y="0.0"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aYt-UF-dmq">

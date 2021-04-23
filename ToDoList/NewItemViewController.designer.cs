@@ -13,10 +13,16 @@ namespace ToDoList
 	partial class NewItemViewController
 	{
 		[Outlet]
+		UIKit.UIButton addButton { get; set; }
+
+		[Outlet]
 		UIKit.UISwitch importantSwitch { get; set; }
 
 		[Outlet]
 		UIKit.UITextField nameTextField { get; set; }
+
+		[Action ("addButtonClicked:")]
+		partial void addButtonClicked (Foundation.NSObject sender);
 		
 		void ReleaseDesignerOutlets ()
 		{
@@ -28,6 +34,11 @@ namespace ToDoList
 			if (importantSwitch != null) {
 				importantSwitch.Dispose ();
 				importantSwitch = null;
+			}
+
+			if (addButton != null) {
+				addButton.Dispose ();
+				addButton = null;
 			}
 		}
 	}

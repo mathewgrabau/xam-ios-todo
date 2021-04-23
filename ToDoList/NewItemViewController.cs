@@ -19,5 +19,13 @@ namespace ToDoList
 
             
         }
+
+        partial void addButtonClicked(NSObject sender)
+        {
+
+            System.Console.WriteLine("You clicked the button!");
+        }
+
+
     }
 }
