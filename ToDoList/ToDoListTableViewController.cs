@@ -10,7 +10,7 @@ namespace ToDoList
 {
 	public partial class ToDoListTableViewController : UITableViewController
 	{
-        List<ToDoItem> _listItems = new List<ToDoItem>();
+        public List<ToDoItem> ToDoItems { get; private set; } = new List<ToDoItem>();
 
 		public ToDoListTableViewController (IntPtr handle) : base (handle)
 		{
@@ -20,19 +20,19 @@ namespace ToDoList
         {
             base.ViewDidLoad();
 
-            _listItems.Add(new ToDoItem { Important = true, Name = "Buy Milk" });
-            _listItems.Add(new ToDoItem { Important = false, Name = "Walk the dog" });
+            ToDoItems.Add(new ToDoItem { Important = true, Name = "Buy Milk" });
+            ToDoItems.Add(new ToDoItem { Important = false, Name = "Walk the dog" });
         }
             
         public override nint RowsInSection(UITableView tableView, nint section)
         {
-            return _listItems.Count;
+            return ToDoItems.Count;
         }
 
         public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
         {
 			var cell = new UITableViewCell();
-            ToDoItem item = _listItems[indexPath.Row];
+            ToDoItem item = ToDoItems[indexPath.Row];
             if (item != null)
             {
                 if (item.Important)
@@ -46,6 +46,16 @@ namespace ToDoList
             }
 
 			return cell;
+        }
+
+        public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
+        {
+            base.PrepareForSegue(segue, sender);
+
+            if (segue.DestinationViewController is NewItemViewController newItemViewController)
+            {
+                newItemViewController.TableViewController = this;
+            }
         }
     }
 }

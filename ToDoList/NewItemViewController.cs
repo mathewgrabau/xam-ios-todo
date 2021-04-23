@@ -9,6 +9,11 @@ namespace ToDoList
 {
 	public partial class NewItemViewController : UIViewController
 	{
+        /// <summary>
+        /// Reference to the previous view controller (the table view controller)
+        /// </summary>
+        public ToDoListTableViewController TableViewController { get; set; }
+
 		public NewItemViewController (IntPtr handle) : base (handle)
 		{
 		}
@@ -16,13 +21,10 @@ namespace ToDoList
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-
-            
         }
 
         partial void addButtonClicked(NSObject sender)
         {
-
             if (!string.IsNullOrEmpty(nameTextField.Text))
             {
                 var newItem = new ToDoItem
@@ -30,9 +32,14 @@ namespace ToDoList
                     Name = nameTextField.Text,
                     Important = importantSwitch.On
                 };
+
+                // Add and reload the data in the table.
+                TableViewController?.ToDoItems.Add(newItem);
+                TableViewController?.TableView.ReloadData();
+
+                // After adding the view pop back to the main controller
+                NavigationController.PopViewController(true);
             }
         }
-
-
     }
 }
