@@ -138,6 +138,10 @@
         <Compile Include="ToDoListTableViewController.designer.cs">
           <DependentUpon>ToDoListTableViewController.cs</DependentUpon>
         </Compile>
+        <Compile Include="NewItemViewController.cs" />
+        <Compile Include="NewItemViewController.designer.cs">
+          <DependentUpon>NewItemViewController.cs</DependentUpon>
+        </Compile>
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

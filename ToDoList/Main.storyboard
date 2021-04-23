@@ -44,10 +44,10 @@
             </objects>
             <point key="canvasLocation" x="1639.1304347826087" y="0.0"/>
         </scene>
-        <!--View Controller-->
+        <!--New Item View Controller-->
         <scene sceneID="phg-nP-syg">
             <objects>
-                <viewController id="waV-U0-aIW" sceneMemberID="viewController">
+                <viewController id="waV-U0-aIW" customClass="NewItemViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EhV-s0-ig7"/>
                         <viewControllerLayoutGuide type="bottom" id="pPZ-We-3XW"/>
@@ -55,9 +55,44 @@
                     <view key="view" contentMode="scaleToFill" id="osv-QQ-Rer">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xwk-8h-QHH">
+                                <rect key="frame" x="192" y="264" width="30" height="30"/>
+                                <state key="normal" title="Add"/>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BNj-Rf-xrI">
+                                <rect key="frame" x="40" y="108" width="334" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qJP-c8-Ovq">
+                                <rect key="frame" x="182.5" y="203" width="51" height="31"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Important" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVK-mm-K4O">
+                                <rect key="frame" x="170" y="162" width="74.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xwk-8h-QHH" firstAttribute="centerX" secondItem="osv-QQ-Rer" secondAttribute="centerX" id="3U0-k6-bsd"/>
+                            <constraint firstItem="BNj-Rf-xrI" firstAttribute="top" secondItem="EhV-s0-ig7" secondAttribute="bottom" constant="20" id="9qt-GA-JdN"/>
+                            <constraint firstItem="xwk-8h-QHH" firstAttribute="top" secondItem="qJP-c8-Ovq" secondAttribute="bottom" constant="30" id="Ofa-aX-ofi"/>
+                            <constraint firstItem="yVK-mm-K4O" firstAttribute="top" secondItem="BNj-Rf-xrI" secondAttribute="bottom" constant="20" id="Ro2-Vd-2Lp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BNj-Rf-xrI" secondAttribute="trailing" constant="20" id="cvR-hc-z2T"/>
+                            <constraint firstItem="BNj-Rf-xrI" firstAttribute="leading" secondItem="osv-QQ-Rer" secondAttribute="leadingMargin" constant="20" id="fca-xb-nU7"/>
+                            <constraint firstItem="qJP-c8-Ovq" firstAttribute="centerX" secondItem="osv-QQ-Rer" secondAttribute="centerX" id="hE7-oU-tbX"/>
+                            <constraint firstItem="yVK-mm-K4O" firstAttribute="centerX" secondItem="osv-QQ-Rer" secondAttribute="centerX" id="oRc-ra-qGW"/>
+                            <constraint firstItem="qJP-c8-Ovq" firstAttribute="top" secondItem="yVK-mm-K4O" secondAttribute="bottom" constant="20" id="v9f-AV-fVb"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="RvL-r3-cB3"/>
+                    <connections>
+                        <outlet property="importantSwitch" destination="qJP-c8-Ovq" id="bpz-JG-dG8"/>
+                        <outlet property="nameTextField" destination="BNj-Rf-xrI" id="tLb-KF-fk9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H2x-16-Ucv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
