@@ -23,7 +23,14 @@ namespace ToDoList
         partial void addButtonClicked(NSObject sender)
         {
 
-            System.Console.WriteLine("You clicked the button!");
+            if (!string.IsNullOrEmpty(nameTextField.Text))
+            {
+                var newItem = new ToDoItem
+                {
+                    Name = nameTextField.Text,
+                    Important = importantSwitch.On
+                };
+            }
         }
 
 
