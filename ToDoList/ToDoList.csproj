@@ -142,6 +142,11 @@
         <Compile Include="NewItemViewController.designer.cs">
           <DependentUpon>NewItemViewController.cs</DependentUpon>
         </Compile>
+        <Compile Include="UpdateItemViewController.cs" />
+        <Compile Include="UpdateItemViewController.designer.cs">
+          <DependentUpon>UpdateItemViewController.cs</DependentUpon>
+        </Compile>
+        <Compile Include="NSObjectWrapper.cs" />
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

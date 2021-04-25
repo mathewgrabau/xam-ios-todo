@@ -24,6 +24,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Y7Q-2F-6tc" kind="show" identifier="GoToUpdateItem" id="iWu-5q-VAt"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -101,6 +104,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H2x-16-Ucv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2534.7826086956525" y="0.0"/>
+        </scene>
+        <!--Update Item View Controller-->
+        <scene sceneID="jRN-sj-yqg">
+            <objects>
+                <viewController id="Y7Q-2F-6tc" customClass="UpdateItemViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hjk-86-Ydh"/>
+                        <viewControllerLayoutGuide type="bottom" id="4QP-IC-dYc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fRR-xm-Jgm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xio-aX-vCX">
+                                <rect key="frame" x="173.5" y="189" width="67" height="30"/>
+                                <state key="normal" title="Complete"/>
+                                <connections>
+                                    <action selector="completeClicked:" destination="Y7Q-2F-6tc" eventType="touchUpInside" id="L5G-au-ZAL"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7YS-Gu-zQf">
+                                <rect key="frame" x="40" y="108" width="334" height="41"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7YS-Gu-zQf" firstAttribute="leading" secondItem="fRR-xm-Jgm" secondAttribute="leadingMargin" constant="20" id="0uR-ud-Bwp"/>
+                            <constraint firstItem="7YS-Gu-zQf" firstAttribute="top" secondItem="hjk-86-Ydh" secondAttribute="bottom" constant="20" id="9S2-Oo-YbE"/>
+                            <constraint firstItem="Xio-aX-vCX" firstAttribute="centerX" secondItem="fRR-xm-Jgm" secondAttribute="centerX" id="bqV-eq-77W"/>
+                            <constraint firstItem="Xio-aX-vCX" firstAttribute="top" secondItem="7YS-Gu-zQf" secondAttribute="bottom" constant="40" id="jQ0-FD-snc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7YS-Gu-zQf" secondAttribute="trailing" constant="20" id="qgK-yj-Fh6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="oHj-xg-2nJ"/>
+                    <connections>
+                        <outlet property="nameLabel" destination="7YS-Gu-zQf" id="weV-7k-93n"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gZp-iz-Use" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2535" y="783"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aYt-UF-dmq">

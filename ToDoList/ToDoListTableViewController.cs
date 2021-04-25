@@ -8,7 +8,12 @@ using UIKit;
 
 namespace ToDoList
 {
-	public partial class ToDoListTableViewController : UITableViewController
+
+
+
+
+
+    public partial class ToDoListTableViewController : UITableViewController
 	{
         public List<ToDoItem> ToDoItems { get; private set; } = new List<ToDoItem>();
 
@@ -56,6 +61,18 @@ namespace ToDoList
             {
                 newItemViewController.TableViewController = this;
             }
+            else if (segue.DestinationViewController is UpdateItemViewController updateItemViewController && sender is NSObjectWrapper<ToDoItem> wrappedSelection)
+            {
+                updateItemViewController.Item = wrappedSelection.Context;
+                updateItemViewController.TableViewController = this;
+            }
+        }
+
+        public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
+        {
+            var selectedPath = indexPath.Row;
+            var selectedItem = ToDoItems[selectedPath];
+            PerformSegue("GoToUpdateItem", NSObjectWrapper<ToDoItem>.Wrap(ref selectedItem));
         }
     }
 }
