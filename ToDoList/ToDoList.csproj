@@ -73,6 +73,9 @@
     </ItemGroup>
     <ItemGroup>
       <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+      <PackageReference Include="sqlite-net-pcl">
+        <Version>1.7.335</Version>
+      </PackageReference>
     </ItemGroup>
     <ItemGroup>
         <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
@@ -147,6 +150,10 @@
           <DependentUpon>UpdateItemViewController.cs</DependentUpon>
         </Compile>
         <Compile Include="NSObjectWrapper.cs" />
+        <Compile Include="ApplicationDatabase.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <BundleResource Include="Resources\ToDoListModel.xcdatamodeld\ToDoListModel.xcdatamodel\contents" />
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

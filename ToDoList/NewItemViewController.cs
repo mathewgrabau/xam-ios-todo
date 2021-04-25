@@ -9,6 +9,8 @@ namespace ToDoList
 {
 	public partial class NewItemViewController : UIViewController
 	{
+        private ApplicationDatabase _database;
+
         /// <summary>
         /// Reference to the previous view controller (the table view controller)
         /// </summary>
@@ -21,6 +23,8 @@ namespace ToDoList
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+
+            _database = new ApplicationDatabase();
         }
 
         partial void addButtonClicked(NSObject sender)
@@ -33,9 +37,9 @@ namespace ToDoList
                     Important = importantSwitch.On
                 };
 
-                // Add and reload the data in the table.
-                TableViewController?.ToDoItems.Add(newItem);
-                TableViewController?.TableView.ReloadData();
+                _database.Add(newItem);
+
+                TableViewController?.ReloadItems();
 
                 // After adding the view pop back to the main controller
                 NavigationController.PopViewController(true);

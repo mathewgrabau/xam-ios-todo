@@ -1,4 +1,6 @@
-﻿using Foundation;
+﻿using System.IO;
+using Foundation;
+using SQLite;
 using UIKit;
 
 namespace ToDoList
@@ -17,8 +19,15 @@ namespace ToDoList
         {
             // Override point for customization after application launch.
             // If not required for your application you can safely delete this method
+
+            // Start by creating or loading the database as required.
+            ApplicationDatabase.CreateDatabase();
+
             return true;
         }
+
+        
+
 
         // UISceneSession Lifecycle
 

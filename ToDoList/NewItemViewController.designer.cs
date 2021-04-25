@@ -26,9 +26,9 @@ namespace ToDoList
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (nameTextField != null) {
-				nameTextField.Dispose ();
-				nameTextField = null;
+			if (addButton != null) {
+				addButton.Dispose ();
+				addButton = null;
 			}
 
 			if (importantSwitch != null) {
@@ -36,9 +36,9 @@ namespace ToDoList
 				importantSwitch = null;
 			}
 
-			if (addButton != null) {
-				addButton.Dispose ();
-				addButton = null;
+			if (nameTextField != null) {
+				nameTextField.Dispose ();
+				nameTextField = null;
 			}
 		}
 	}

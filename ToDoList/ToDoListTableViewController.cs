@@ -2,6 +2,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 using Foundation;
 using UIKit;
@@ -16,6 +17,7 @@ namespace ToDoList
     public partial class ToDoListTableViewController : UITableViewController
 	{
         public List<ToDoItem> ToDoItems { get; private set; } = new List<ToDoItem>();
+        private ApplicationDatabase _database;
 
 		public ToDoListTableViewController (IntPtr handle) : base (handle)
 		{
@@ -25,8 +27,9 @@ namespace ToDoList
         {
             base.ViewDidLoad();
 
-            ToDoItems.Add(new ToDoItem { Important = true, Name = "Buy Milk" });
-            ToDoItems.Add(new ToDoItem { Important = false, Name = "Walk the dog" });
+            _database = new ApplicationDatabase();
+
+            ToDoItems = _database.GetToDoItems().ToList();
         }
             
         public override nint RowsInSection(UITableView tableView, nint section)
@@ -73,6 +76,14 @@ namespace ToDoList
             var selectedPath = indexPath.Row;
             var selectedItem = ToDoItems[selectedPath];
             PerformSegue("GoToUpdateItem", NSObjectWrapper<ToDoItem>.Wrap(ref selectedItem));
+        }
+
+        public void ReloadItems()
+        {
+            _database.Open();
+            ToDoItems.Clear();
+            ToDoItems.AddRange(_database.GetToDoItems());
+            TableView.ReloadData();
         }
     }
 }
