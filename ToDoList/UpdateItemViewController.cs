@@ -19,6 +19,8 @@ namespace ToDoList
         /// </summary>
         public ToDoListTableViewController TableViewController { get; set; }
 
+        private ApplicationDatabase _database;
+
         public UpdateItemViewController (IntPtr handle) : base (handle)
 		{
 		}
@@ -31,19 +33,21 @@ namespace ToDoList
             {
                 nameLabel.Text = Item.Name + (Item.Important ? " (!)" : string.Empty);
             }
+
+            _database = new ApplicationDatabase();
         }
 
         /// <summary>
-        /// Handler for the complete button being tapped.
+        /// Handler for the complete button being tapped. Removes the
+        /// item from the database and returns back to the list controller.
         /// </summary>
         /// <param name="sender"></param>
         partial void completeClicked(NSObject sender)
         {
             if (Item != null)
             {
-                TableViewController?.ToDoItems.Remove(Item);
-                TableViewController?.TableView.ReloadData();
-
+                _database.Delete(Item);
+                TableViewController.ReloadItems();
                 NavigationController.PopViewController(true);
             }
         }
